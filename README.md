@@ -2,9 +2,9 @@
 
 Este desafio foi proposto como uma atividade 'Hands On' para o Bootcamp 'NTT DATA - Engenharia de Dados com Python' da Dio.
 O curso pode ser acessado por este [link](https://web.dio.me/track/engenharia-dados-python).
+
 ## Objetivo Geral
-Criar um sistema bancário com as operações: sacar, depositar
-e visualizar extrato.
+Criar um sistema bancário com as operações: sacar, depositar e visualizar extrato.
 
 ## Desafio
 Fomos contratados por um grande banco para desenvolver o seu novo sistema. Esse banco deseja modernizar suas operações e para isso escolheu a linguagem Python. Para a primeira versão do sistema devemos implementar apenas 3 operações: depósito, saque e extrato.

@@ -22,23 +22,31 @@ def escrever_extrato(extrato, mensagem):
 def saque(saldo, saques_realizados):
     if saques_realizados > 2:
         print('O usuário já ultrapassou o limite diário de saques. Tente novamente amanha.')
-        return False
+        return saldo, saques_realizados
 
     valor_saque = float(input('Digite (apenas números e "." caso deseje algo na casa dos centavos) o valor desejado para realizar o saque.\
-                                      \nExemplo de saque: digite "120.25" caso queira sacar "R$ 120.25".\n Lembre-se que o limite diário de saques é de 3 operações e o limite máximo do saque é de R$ 500.00.'))
+            \nExemplo de saque: digite "120.25" caso queira sacar "R$ 120.25".\nLembre-se que o limite diário de saques é de 3 operações e o limite máximo do saque é de R$ 500.00.\nQuantia: R$ '))
 
-    if saques_realizados > 2:
-        print('O usuário já ultrapassou o limite diário de saques. Tente novamente amanha.')
-        return False
-    elif valor_saque > saldo:
-        print(f'O usuário tentou sacar R$ {
-              valor_saque:.2f}, porém só há R$ {saldo:.2f} em sua conta.')
-        return False
+    if valor_saque > saldo:
+        print(f'O usuário tentou sacar R$ {valor_saque:.2f}, porém só há R$ {saldo:.2f} em sua conta.')
+        return saldo, saques_realizados
     else:
         saldo -= valor_saque
+        saques_realizados += 1
+        print(f'O usuário sacou R$ {valor_saque:.2f} e agora sua conta possui R$ {saldo:.2f}.')
+        return saldo, saques_realizados
+
+
+def deposito(saldo):
+    quantia = float(input('Digite (apenas números e "." caso deseje algo na casa dos centavos) o valor desejado para realizar o Depósito.\
+            \nExemplo de saque: digite "120.25" caso queira depositar "R$ 120.25".\nQuantia: R$ '))
+    if quantia > 0:
+        saldo += quantia
+        print(f'Adicionando a sua conta R$ {quantia:.2f}. Agora o valor total é de R$ {saldo:.2f}.')
         return saldo
-        # mensagem_extrato = f''
-        # escrever_extrato()
+    else:
+        print(f'Operação Inválida. O valor de deposito (R$ {quantia:.2f} não respeita as condições do banco.')
+        return saldo
 
 
 def menu():
@@ -53,15 +61,19 @@ def menu():
 
     while True:
         operacao = input(
-            '''Digite a operação desejada:
-            [s]: Para realizar um saque em sua conta bancária.
-            [e]: Para visualizar o seu extrato
-            [0 (zero)]: para sair
+            '''
+
+            Digite a operação desejada:
+            [s]: Para realizar um saque;
+            [d]: Para realizar um depósito;
+            [e]: Para visualizar o seu extrato da sua conta bancária;
+            [0 (zero)]: para sair.
             Operação: '''
         )
         if operacao == 's':
-            saldo_conta = saque(saldo_conta, saques_realizados)
-
+            saldo_conta, saques_realizados = saque(saldo_conta, saques_realizados)
+        elif operacao == 'd':
+            deposito(saldo_conta)
         elif operacao == 'e':
             print('\nVou fazer a visualizacao')
         elif operacao == '0':
