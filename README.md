@@ -1,7 +1,7 @@
 # Desafio: Criando um sistema bancário
 
 Este desafio foi proposto como uma atividade 'Hands On' para o Bootcamp 'NTT DATA - Engenharia de Dados com Python' da Dio.
-O curso pode ser acessado por este (link)[https://web.dio.me/track/engenharia-dados-python].
+O curso pode ser acessado por este (https://web.dio.me/track/engenharia-dados-python)[link].
 ## Objetivo Geral
 Criar um sistema bancário com as operações: sacar, depositar
 e visualizar extrato.
