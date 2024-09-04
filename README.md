@@ -18,3 +18,8 @@ O sistema deve permitir realizar 3 saques diários com limite máximo de R$ 500,
 ## Operação de extrato
 Essa operação deve listar todos os depósitos e saques realizados na conta. No fim da listagem deve ser exibido o saldo atual da conta. Se o extrato estiver em branco, exibir a mensagem: Não foram realizadas movimentações. Os valores devem ser exibidos utilizando o formato R$ xxx.xx, exemplo:
 1500.45 = R$ 1500.45
+
+
+## Run
+
+Para executar o projeto, basta utilizar o comando python ```python3 desafio.py``` e iniciar o programa. Você receberá uma mensagem explicando as regras do jogo.
